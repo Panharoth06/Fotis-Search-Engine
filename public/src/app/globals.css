@@ -3,9 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@keyframes wave { 0% { transform: translateX(0); } 50% { transform: translateX(-100px); } 100% { transform: translateX(0); } }
-.animate-wave { animation: wave 6s ease-in-out infinite; }
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

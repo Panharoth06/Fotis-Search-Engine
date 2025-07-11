@@ -14,12 +14,12 @@ export default function HomePage() {
   };
 
   return (
-    <div className="bg-black/[0.96] overflow-hidden min-h-screen flex flex-col items-center justify-center text-white relative">
+    <div className="bg-black/[0.96] min-h-screen flex flex-col items-center justify-center text-white relative">
       {/* SVG Background */}
       <svg
         id="wave"
-        className="absolute bottom-0 w-[2600px] h-auto z-2 animate-wave"
-        viewBox="740 0 2640 310"
+        className="absolute bottom-0 w-full h-auto z-2"
+        viewBox="20 0 1440 310"
         preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg"
         style={{ backgroundBlendMode: 'overlay' }}
