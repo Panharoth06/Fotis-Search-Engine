@@ -1,12 +1,14 @@
+import Link from "next/link";
 import { getUrlDisplay } from "../getUrlDisplay";
 
 import DOMPurify from "dompurify";
+import Image from "next/image";
 
 const renderVideoResult = (item: any, index: number) => (
     <div key={index} className="result-card mt-[20px] sm:mt-[55px]">
       <div className="flex flex-col">
         <p className="text-[16px] text-white/80">{getUrlDisplay(item)}</p>
-        <a
+        <Link
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
@@ -21,16 +23,16 @@ const renderVideoResult = (item: any, index: number) => (
               }),
             }}
           />
-        </a>
+        </Link>
         <div className="flex gap-4">
-          <a
+          <Link
             href={item.url || '#'}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visit ${item.title || 'thumbnail link'}`}
           >
             {item.thumbnail?.original ? (
-              <img
+              <Image
                 src={item.thumbnail.original}
                 alt={`Thumbnail of ${item.title}`}
                 className="rounded-[10px]"
@@ -42,7 +44,7 @@ const renderVideoResult = (item: any, index: number) => (
                 No thumbnail
               </div>
             )}
-          </a>
+          </Link>
           <div className="flex flex-col justify-between">
             <p
               className="text-[10px] sm:text-[16px] line-clamp-2 text-white/80"

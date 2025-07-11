@@ -1,7 +1,7 @@
 'use client';
 
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -18,7 +18,7 @@ import {FilterButton} from '@/components/ui/FilterButton';
 
 const cache = new Map<string, any>(); // Global in-memory cache
 
-export default function SearchPage() {
+function SearchPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const query = searchParams.get('q') || '';
@@ -135,7 +135,7 @@ export default function SearchPage() {
         {/* Filter Buttons */}
         <FilterButton filter={filter} filters={filters} setFilter={setFilter} query={query} />
 
-        {loading && <Loader/>}
+        {/* {loading && <Loader/>} */}
         {error && !loading && <p className="text-red-500">⚠️ {error}</p>}
         {!loading && !error && filteredResults.length === 0 && (
           <p className="text-white/80">No results found for {filter}.</p>
@@ -151,5 +151,13 @@ export default function SearchPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+  export default function SearchPageWrapper() {
+  return (
+    <Suspense fallback={<Loader/>}>
+      <SearchPage />
+    </Suspense>
   );
 }

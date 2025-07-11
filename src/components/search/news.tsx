@@ -1,4 +1,6 @@
 import DOMPurify from "dompurify";
+import Image from "next/image";
+import Link from "next/link";
 
 const renderNewsResult = (item: any, index: number) => (
     <div key={index} className="result-card mt-[20px] sm:mt-[55px]">
@@ -6,7 +8,7 @@ const renderNewsResult = (item: any, index: number) => (
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <div className="rounded-full">
-              <img
+              <Image
                 className="rounded-full"
                 style={{ width: '24px', height: '24px' }}
                 src={item.meta_url?.favicon || ''}
@@ -25,7 +27,7 @@ const renderNewsResult = (item: any, index: number) => (
             className="text-xl font-semibold mb-2 hover:underline"
             style={{ color: 'oklch(70.7% 0.165 254.624)' }}
           >
-            <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <Link href={item.url} target="_blank" rel="noopener noreferrer">
               <span
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(item.title || 'No title available', {
@@ -34,7 +36,7 @@ const renderNewsResult = (item: any, index: number) => (
                   }),
                 }}
               />
-            </a>
+            </Link>
           </h2>
           <p
             className="text-white/80 text-sm mb-4"
@@ -48,20 +50,20 @@ const renderNewsResult = (item: any, index: number) => (
           />
         </div>
         <div className="items-center">
-          <a
+          <Link
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visit ${item.title || 'Image'}`}
           >
-            <img
+            <Image
               src={item.thumbnail?.src || 'https://via.placeholder.com/96x96'}
               alt={item.title || 'Image'}
               className="rounded-lg"
               style={{ width: '300px', height: 'auto' }}
               loading="lazy"
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

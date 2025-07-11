@@ -22,7 +22,7 @@ export default function SplineSceneBasic() {
             <strong>Fotis</strong> is a modern search engine powered by the Brave Search API.  
             It allows you to explore the web using four powerful filters: <strong>Web</strong>, <strong>Images</strong>, <strong>Videos</strong>, and <strong>News</strong>.
             <br /><br />
-            If you're a registered user, Fotis also offers a personal dashboard where you can track your search history, 
+            If you&#39;re a registered user, Fotis also offers a personal dashboard where you can track your search history, 
             see how often you search each month, and get insights into your activity — all in one place.
           </p>
         </div>

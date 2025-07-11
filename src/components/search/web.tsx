@@ -1,10 +1,12 @@
 import DOMPurify from "dompurify";
+import Image from "next/image";
+import Link from "next/link";
 
 const renderWebResult = (item: any, index: number) => (
     <div key={index} className="result-card mt-[20px] sm:mt-[55px]">
       <div className="flex gap-4 items-center mb-[10px]">
         <div className="bg-white w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] rounded-[10px] sm:rounded-[20px] overflow-hidden p-1">
-          <img
+          <Image
             src={item.profile?.img || item.thumbnail?.original || ''}
             alt={item.profile?.name || 'website icon'}
             className="w-full h-full object-cover rounded-[10px] sm:rounded-[20px]"
@@ -17,7 +19,7 @@ const renderWebResult = (item: any, index: number) => (
           </p>
         </div>
       </div>
-      <a
+      <Link
         href={item.url}
         target="_blank"
         rel="noopener noreferrer"

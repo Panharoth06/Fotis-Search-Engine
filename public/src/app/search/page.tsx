@@ -172,7 +172,7 @@ const router = useRouter();
         )}
 
         <div className={filter === 'image' ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4' : 'space-y-4'}>
-          {filteredResults.map((item: any, i: number) => {
+          {filteredResults.map((item: string, i: number) => {
             if (filter === 'image') return renderImageResult(item, i);
             if (filter === 'video') return renderVideoResult(item, i);
             if (filter === 'news') return renderNewsResult(item, i);
