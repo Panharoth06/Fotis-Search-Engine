@@ -2,7 +2,6 @@ import Link from "next/link";
 import { getUrlDisplay } from "../getUrlDisplay";
 
 import DOMPurify from "dompurify";
-import Image from "next/image";
 
 const renderVideoResult = (item: any, index: number) => (
     <div key={index} className="result-card mt-[20px] sm:mt-[55px]">
@@ -32,7 +31,7 @@ const renderVideoResult = (item: any, index: number) => (
             aria-label={`Visit ${item.title || 'thumbnail link'}`}
           >
             {item.thumbnail?.original ? (
-              <Image
+              <img
                 src={item.thumbnail.original}
                 alt={`Thumbnail of ${item.title}`}
                 className="rounded-[10px]"

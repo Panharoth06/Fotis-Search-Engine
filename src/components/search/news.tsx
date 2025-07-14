@@ -1,5 +1,4 @@
 import DOMPurify from "dompurify";
-import Image from "next/image";
 import Link from "next/link";
 
 const renderNewsResult = (item: any, index: number) => (
@@ -8,7 +7,7 @@ const renderNewsResult = (item: any, index: number) => (
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <div className="rounded-full">
-              <Image
+              <img
                 className="rounded-full"
                 style={{ width: '24px', height: '24px' }}
                 src={item.meta_url?.favicon || ''}
@@ -56,7 +55,7 @@ const renderNewsResult = (item: any, index: number) => (
             rel="noopener noreferrer"
             aria-label={`Visit ${item.title || 'Image'}`}
           >
-            <Image
+            <img
               src={item.thumbnail?.src || 'https://via.placeholder.com/96x96'}
               alt={item.title || 'Image'}
               className="rounded-lg"

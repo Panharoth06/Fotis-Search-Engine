@@ -1,7 +1,6 @@
 import DOMPurify from "dompurify";
 
 import { getUrlDisplay } from "../getUrlDisplay";
-import Image from "next/image";
 import Link from "next/link";
 
 const renderImageResult = (item: any, index: number) => {
@@ -14,7 +13,7 @@ const renderImageResult = (item: any, index: number) => {
           rel="noopener noreferrer"
           aria-label={`Visit ${item.title || 'Image'}`}
         >
-          <Image
+          <img
             src={imageUrl}
             alt={item.title || 'Image'}
             className="w-full h-48 object-cover rounded-t-lg hover:opacity-90 transition-opacity"
