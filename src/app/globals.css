@@ -44,6 +44,16 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-marquee: marquee var(--duration, 30s) linear infinite;
+  --color-sky-500: var(----sky-500);
+  --color-sky-400: var(----sky-400);
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%); } }
+  @keyframes marquee {
+  to {
+    transform: translateX(-50%); } }
 }
 
 :root {
@@ -79,6 +89,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
 }
 
 .dark {
@@ -113,6 +125,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
 }
 
 @layer base {

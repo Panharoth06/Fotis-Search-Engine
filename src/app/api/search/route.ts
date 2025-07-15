@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
       headers: {
         Accept: "application/json",
         "X-Subscription-Token": BRAVE_API_KEY ?? "",
-        "User-Agent": "MyBraveSearchApp/1.0",
+        "User-Agent": "MyBraveSearchApp/1.0", 
       },
     });
 
