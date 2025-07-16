@@ -85,7 +85,7 @@ export function AreaChartComponent() {
       </CardContent>
       <CardFooter>
         <p>{new Date().toISOString().slice(0, 16).replace("T", " ")}</p>
-      </CardFooter>  
+      </CardFooter>
     </Card>
   );
 }

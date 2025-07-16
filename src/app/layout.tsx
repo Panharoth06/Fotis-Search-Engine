@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import AnimatedNavBar from "@/components/animated-navbar/animatednavbar";
+import { SplashCursor } from "@/components/ui/splash-cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,15 +20,16 @@ export const metadata: Metadata = {
   description: "Fotis is a search engine",
 };
 
-export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) 
-{
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black/95`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black/[0.96] relative`}
       >
         {/* Fixed Navbar */}
-        <div className="fixed top-0 left-0 w-full z-50 bg-black/95 flex justify-center items-center py-4 shadow-md">
+        <div className="fixed top-0 left-0 w-full z-50 bg-black/[0.96] flex justify-center items-center py-4 shadow-md">
           <div className="text-white">
             <AnimatedNavBar
               links={[
@@ -39,7 +41,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
         </div>
 
         {/* Spacer to prevent overlap */}
-         {/* Adjust height to match navbar height */}
+        {/* Adjust height to match navbar height */}
         {/* <div className="h-20" /> */}
 
         {children}
@@ -47,4 +49,3 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
     </html>
   );
 }
-

@@ -3,41 +3,41 @@
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
-import { IconCloud } from "@/components/magicui/icon-cloud";
 import { Globe } from "@/components/magicui/globe";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import MarqueeDemo from "@/components/customUI/Marquee";
+import { SplashCursor } from "@/components/ui/splash-cursor";
+import { TestimonialCarousel } from "@/components/ui/testimonial";
 
-const slugs = [
-  "typescript",
-  "spring",
-  "java",
-  "react",
-  "html5",
-  "css3",
-  "visualstudiocode",
-  "vercel",
-  "github",
-  "visualstudiocode",
-  "figma",
-    "shadcn",
-  "spring",
-  "typescript",
-  "postgresql",
-  "vercel",
-  "render",
-    "java",
-  "react",
-  "postgresql",
+import panharoth from "../../../public/panharoth.jpg"
+import chkea from "../../../public/chkea.jpg"
+
+import { SparklesPreview } from "@/components/customUI/SparklesText";
+
+const TESTIMONIAL_DATA = [
+  {
+    id: 1,
+    name: "Panharoth",
+    avatar: panharoth,
+    description: " 'Eating & Sleeping 24/7' ",
+  },
+  // {
+  //   id: 2,
+  //   name: "Monivichra",
+  //   avatar: chkea,
+  //   description: "Member",
+  // },
+  // {
+  //   id: 3,
+  //   name: "Rachana ",
+  //   avatar: panharoth,
+  //   description: "Member",
+  // },
 ];
 
 export default function SplineSceneBasic() {
-  const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
-  );
-
   return (
-    <div className="bg-black/[0.96] mb-96">
+    <div className="bg-black/[0.96] mb-12">
       <Card className="w-full h-screen bg-black/[0.96] relative overflow-hidden">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
@@ -73,18 +73,30 @@ export default function SplineSceneBasic() {
           </div>
         </div>
       </Card>
-      {/* <div className="relative flex size-full items-center justify-center overflow-hidden">
-        <IconCloud images={images} />
-      </div> */}
       <div className="relative flex size-full max-w-full items-center justify-center overflow-hidden rounded-lg pb-40 pt-8 md:pb-60">
         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black/20 to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-        Fotis
-      </span>
-        <Globe className="top-28"/>
+          Fotis
+        </span>
+        <Globe className="top-28" />
       </div>
-      <VelocityScroll className="text-neutral-300 text-5xl mt-60" defaultVelocity={1}>Fotis-Search Engine</VelocityScroll>
+      <VelocityScroll
+        className="text-neutral-300 text-5xl mt-60"
+        defaultVelocity={1}
+      >
+        Fotis-Search Engine
+      </VelocityScroll>
       <div className="mt-48"></div>
-      <MarqueeDemo/>
+      <MarqueeDemo />
+      <SplashCursor />
+
+      <div className="mt-32">
+        <SparklesPreview/>
+      </div>
+
+      <TestimonialCarousel
+        testimonials={TESTIMONIAL_DATA}
+        className="max-w-2xl mx-auto"
+      />
     </div>
   );
 }

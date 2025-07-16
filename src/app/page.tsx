@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { SplashCursor } from "@/components/ui/splash-cursor";
 
 export default function HomePage() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -22,7 +23,7 @@ export default function HomePage() {
         viewBox="740 0 2640 310"
         preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ backgroundBlendMode: 'overlay' }}
+        style={{ backgroundBlendMode: "overlay" }}
       >
         <defs>
           <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
@@ -37,7 +38,9 @@ export default function HomePage() {
       </svg>
       {/* Content */}
       <div className="relative z-10 w-full flex flex-col items-center">
-        <h1 className="text-5xl font-bold mb-6 text-orange-500">Fotis Search</h1>
+        <h1 className="text-5xl font-bold mb-6 text-orange-500">
+          Fotis Search
+        </h1>
         <form onSubmit={handleSubmit} className="text-xl w-full max-w-3xl">
           <input
             type="text"
@@ -50,6 +53,7 @@ export default function HomePage() {
           />
         </form>
       </div>
+      <SplashCursor />
     </div>
   );
 }

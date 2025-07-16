@@ -12,7 +12,7 @@ export function Marquee({
   children,
   pauseOnHover = false,
   direction = "left",
-  speed = 50,
+  speed = 40,
   className,
   ...props
 }: MarqueeProps) {

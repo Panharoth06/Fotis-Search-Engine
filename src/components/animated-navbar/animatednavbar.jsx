@@ -12,7 +12,8 @@ const Links = ({ link, setAttributes }) => {
   const handleMouseEnter = () => {
     if (ref.current) {
       const { width, left } = ref.current.getBoundingClientRect();
-      const parentLeft = ref.current.parentNode?.getBoundingClientRect().left || 0;
+      const parentLeft =
+        ref.current.parentNode?.getBoundingClientRect().left || 0;
       setAttributes({
         width: width + 40,
         left: left - parentLeft - 20,
@@ -37,7 +38,6 @@ const Links = ({ link, setAttributes }) => {
     </li>
   );
 };
-
 
 const AnimatedNavBar = ({ links }) => {
   const [attributes, setAttributes] = useState({
