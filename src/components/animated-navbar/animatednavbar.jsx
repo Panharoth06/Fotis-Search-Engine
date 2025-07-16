@@ -26,6 +26,13 @@ const Links = ({ link, setAttributes }) => {
   const normalize = (path) => path.replace(/\/$/, "");
   const isActive = normalize(pathname) === normalize(link.href);
 
+    const handleClick = (e) => {
+    if (link.href === "/") {
+      e.preventDefault();
+      window.location.href = "/";
+    }
+  };
+
   return (
     <li
       ref={ref}
@@ -34,7 +41,7 @@ const Links = ({ link, setAttributes }) => {
         isActive ? "bg-black/95 text-white" : ""
       }`}
     >
-      <Link href={link.href}>{link.label}</Link>
+      <Link onClick={handleClick} href={link.href}>{link.label}</Link>
     </li>
   );
 };

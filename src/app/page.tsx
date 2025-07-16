@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { SplashCursor } from "@/components/ui/splash-cursor";
 
 export default function HomePage() {
+  
   const [query, setQuery] = useState("");
   const router = useRouter();
 
@@ -13,6 +14,8 @@ export default function HomePage() {
     if (!query.trim()) return;
     router.push(`/search?q=${encodeURIComponent(query.trim())}&type=web`);
   };
+
+  
 
   return (
     <div className="bg-black/[0.96] overflow-hidden min-h-screen flex flex-col items-center justify-center text-white relative">

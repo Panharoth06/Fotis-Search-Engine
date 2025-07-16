@@ -7,9 +7,28 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // images: {
-  //   domains: ['imgs.search.brave.com', 'assets.echoapi.com', 'cdn.apifox.com', '/**'],
-  // },
+  async headers() {
+    return [
+      {
+        // Apply cache-control headers to the /about route
+        source: "/about",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "no-store, no-cache, must-revalidate, proxy-revalidate",
+          },
+          {
+            key: "Pragma",
+            value: "no-cache",
+          },
+          {
+            key: "Expires",
+            value: "0",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
